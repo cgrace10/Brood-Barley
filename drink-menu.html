@@ -1,0 +1,155 @@
+<div class="container py-5">
+	
+	    <div class="row">
+	    
+				<div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">Signature Cocktails</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	        
+	        <div class="card-columns">
+	        
+	            <div class="card card-body bg-secondary text-light" ng-repeat="signaturecocktail in signaturecocktails">
+	            
+		                <h6 class="text-truncate text-warning text-center">{{signaturecocktail.drinkTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/drink-images/{{signaturecocktail.drinkTitle}}.jpg" type="image/jpg" style="height: 200px; width: 200px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+		                
+		                <p class="small text-center mt-2">{{signaturecocktail.descriptions}}</p>
+		                
+		                <span class="float-left font-weight-bold">${{signaturecocktail.price}}</span>
+		                
+		                <span class="small float-right ml-1"> {{signaturecocktail.abv}} % </span><span class="small text-warning float-right">ABV</span>
+		                
+	            	</div>
+	            	
+	            </div>
+	            
+	            <div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">Seasonal Cocktails</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	            
+	            <div class="card-columns">
+	            
+		            <div class="card card-body bg-secondary text-light" ng-repeat="seasonalcocktail in seasonalcocktails">
+		            
+		                <span class="float-right font-weight-bold">{{seasonalcocktail.price | currency}}</span>
+		                
+		                <h6 class="text-truncate text-warning text-center">{{seasonalcocktail.drinkTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/drink-images/{{seasonalcocktail.drinkTitle}}.jpg" type="image/jpg" style="height: 200px; width: 200px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+		                
+		                <p class="small text-center mt-2">{{seasonalcocktail.descriptions}}</p>
+		                
+		                <span class="float-left font-weight-bold">${{seasonalcocktail.price}}</span>
+		                
+		                <span class="small float-right ml-1"> {{seasonalcocktail.abv}} % </span><span class="small text-warning float-right">ABV</span>
+		                
+		            </div>
+	            
+	        	</div>
+	        	
+	          <div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">Beer</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	          
+	            <div class="card-columns">
+	            
+		            <div class="card card-body bg-secondary text-light" ng-repeat="beer in beers">
+		            
+		                <h6 class="text-truncate text-warning text-center">{{beer.drinkTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/drink-images/{{beer.drinkTitle}}.jpg" type="image/jpg" style="height: 200px; width: 180px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+		                
+		                <p class="small text-center mt-2">{{beer.descriptions}}</p>
+		                
+		                <span class="float-left font-weight-bold">${{beer.price}}</span>
+		                
+		                <span class="small float-right ml-1"> {{beer.abv}} % </span><span class="small text-warning float-right">ABV</span>
+		                
+		            </div>
+	            
+	        	</div>
+	        	
+	        	<div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">Wine</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	          
+	            <div class="card-columns">
+	            
+		            <div class="card card-body bg-secondary text-light" ng-repeat="wine in wines">
+		            
+		                <h6 class="text-truncate text-warning text-center">{{wine.drinkTitle}}</h6>
+		                
+		                <img class="rounded mx-auto d-block" src="./images/drink-images/wine.jpg" style="height: 160px; width: 200px;">
+		                
+		                <p class="small text-center mt-2">{{wine.descriptions}}</p>
+		                
+		                <span class="float-left font-weight-bold">${{wine.price}}</span>
+		                
+		                <span class="small float-right ml-1"> {{wine.abv}} % </span><span class="small text-warning float-right">ABV</span>
+		                
+		            </div>
+	            
+	        	</div>
+	        	
+	        	<div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">Mocktails</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	          
+	            <div class="card-columns">
+	            
+		            <div class="card card-body bg-secondary text-light" ng-repeat="mocktail in mocktails">
+		            
+		                <h6 class="text-truncate text-warning text-center">{{mocktail.drinkTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/drink-images/{{mocktail.drinkTitle}}.jpg" type="image/jpg" style="height: 200px; width: 170px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+		                
+		                <p class="small text-center mt-2">{{mocktail.descriptions}}</p>
+		                
+		                <span class="float-left font-weight-bold">${{mocktail.price}}</span>
+		                
+		                <span class="small float-right ml-1"> {{wine.abv}} % </span><span class="small text-warning float-right">ABV</span>
+		                
+		            </div>
+	            
+	        	</div>
+	        	
+	        </div>
+	        
+	     </div>

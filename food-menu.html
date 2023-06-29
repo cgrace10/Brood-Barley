@@ -1,0 +1,196 @@
+<div ng-show="!viewCart">
+	<div class="container py-5">
+	
+	    <div class="row">
+	    
+			<div class="col-12 mt-4">	    
+	            
+	            <div class="text-center">
+				
+					<button class="btn btn-outline-warning mt-2 float-right mb-5" ng-click="viewMyCart()">
+						
+					<span class="mr-4 text-light">cart items : {{cart.length}}</span><span class="ml-4 text-light">total : {{cartTotal | currency}}</span>
+						
+					</button>
+					
+				</div>
+				
+			</div>
+					
+				<div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">APPETIZERS</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	        
+	        <div class="card-columns">
+	        
+	            <div class="card card-body bg-secondary text-light" ng-repeat="appetizer in appetizers">
+	            
+		                <h6 class="text-truncate text-warning text-center">{{appetizer.foodTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/food-images/{{appetizer.foodTitle}}.jpg" type="image/jpg" style="height: 200px; width: 200px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+		                
+		                <p class="small mt-2 text-center">{{appetizer.descriptions}}</p>
+		                
+		                <div>
+		                
+		                	<span class="float-left font-weight-bold text-center">${{appetizer.price}}</span>
+		                
+			                <button class="btn btn-warning btn-sm float-right" ng-click="addToCart(appetizer)">
+			
+									add to cart
+		
+							</button>
+					
+	                	</div>
+	                
+	            	</div>
+	            	
+	            </div>
+	            
+	            <div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">ENTREES</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	            
+	            <div class="card-columns">
+	            
+		            <div class="card card-body bg-secondary text-light" ng-repeat="entree in entrees">
+		            
+		                <h6 class="text-truncate text-warning text-center">{{entree.foodTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/food-images/{{entree.foodTitle}}.jpg" type="image/jpg" style="height: 200px; width: 200px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+		                
+		                <p class="small mt-2 text-center">{{entree.descriptions}}</p>
+		                
+		                <div>
+		                
+		                	<span class="float-left font-weight-bold text-center">${{entree.price}}</span>
+		                
+			                <button class="btn btn-warning btn-sm float-right" ng-click="addToCart(entree)">
+			
+									add to cart
+		
+							</button>
+					
+	                	</div>
+		                
+		            </div>
+	            
+	        	</div>
+	        	
+	          <div class="col-12 mt-4">
+	        
+	            	<h3 class="text-center text-light display-2 font-weight-normal">DESSERTS</h3>
+					
+	            	<hr class="accent my-5 bg-warning">
+	            
+	        	</div>
+	          
+	            <div class="card-columns">
+	            
+		            <div class="card card-body bg-secondary text-light" ng-repeat="dessert in desserts">
+		            
+		                <h6 class="text-truncate text-warning text-center">{{dessert.foodTitle}}</h6>
+		                
+		                <object class="img-fluid rounded mx-auto d-block" data="./images/food-images/{{dessert.foodTitle}}.jpg" type="image/jpg" style="height: 200px; width: 200px;">
+		                
+		                	<img src="./images/BAB_Letters.png" style="height: 200px; width: 200px;">
+		                
+		                </object>
+
+		                
+		                <p class="small mt-2 text-center">{{dessert.descriptions}}</p>
+		                
+		                <div>
+		                
+		                	<span class="float-left font-weight-bold text-center">${{dessert.price}}</span>
+		                
+			                <button class="btn btn-warning btn-sm float-right" ng-click="addToCart(dessert)">
+			
+									add to cart
+		
+							</button>
+					
+	                	</div>
+		                
+		            </div>
+	            
+	        	</div>
+	        	
+	        </div>
+	        
+	     </div>
+	     
+</div>
+	
+
+
+<div ng-show="viewCart">
+
+	<div class="display-4 text-center p-3 text-warning">Welcome To Your Cart</div>
+
+	<div class="card text-center">
+
+		<div class="card-header" style="background-color:GoldenRod;">
+
+			<button class="btn btn-success" ng-click="hideMyCart()">
+
+				return to shopping
+
+			</button>
+
+		</div>
+
+		<div class="card-body bg-secondary text-light">		
+
+			<table class="table table-hover">
+		
+					<thead class="thead-dark">
+		
+						<tr>
+							<th>Title</th>
+							<th>Descriptions</th>
+							<th>Genre</th>
+							<th>Price</th>
+						</tr>
+					</thead>
+					<tbody class="text-light">
+						<tr ng-repeat="cartFoodItem in cart track by $index">
+							<td>{{cartFoodItem.foodTitle}}</td>
+							<td>{{cartFoodItem.descriptions}}</td>
+							<td>{{cartFoodItem.genre}}</td>
+							<td>{{cartFoodItem.price | currency}}</td>
+						</tr>
+						
+					</tbody>
+							
+				</table>	
+
+		</div>
+
+		<div class="card-footer" style="background-color:GoldenRod;">
+			<div class="align-center">
+				<button class="btn btn-danger" ng-click="emptyMyCart()">empty</button>
+			</div>
+			<button class="btn btn-secondary float-right text-light">Cart Total : <span class="text-success">{{cartTotal | currency}}</span></button>
+		</div>
+
+	</div>
+
+</div>
+

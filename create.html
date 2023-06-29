@@ -1,0 +1,236 @@
+<style>
+
+	body { 
+
+	  background: url(./images/CreateDrinkItem.jpg) no-repeat center center fixed; 
+
+	  -webkit-background-size: cover;
+
+	  -moz-background-size: cover;
+
+	  -o-background-size: cover;
+
+	  background-size: cover;
+
+	}
+
+</style> 
+
+ 
+<div>
+	<button class="btn btn-outline-warning btn-block mt-3" ng-bind="button_text" ng-click="showHide()"></button>
+		<div class="pt-2" ng-show='!showCreateDrinkItem'>
+			<div class="row pt-3">
+			
+				<div class="col-sm-3">			
+			
+				</div>
+			
+				<div class="col-sm-6">
+			
+					<div class="card">
+			
+						<div class="card-header text-center" style="background-color:GoldenRod;">
+			
+							<h3>Create Food Item</h3>
+			
+							<h5 class="text-success" ng-bind="createStatus"></h5>
+			
+						</div>			
+			
+						<div class="card-body bg-secondary">
+			
+						<form name="createForm">
+			
+							<div class="form-group">
+			
+								<label for="title" class="font-weight-bold">Title:</label>
+			
+								<input ng-model="fooditem.foodTitle" required ng-minlength="2" name="title"
+			
+									type="text" class="form-control" id="title">					
+			
+								<span ng-show="createForm.title.$touched && createForm.title.$invalid"
+			
+									class="text-danger">
+			
+									required and must be at least two characters.
+			
+								</span>					
+			
+							</div>
+							
+							<div class="form-group">
+			
+								<label for="genre" class="font-weight-bold">Genre:</label>
+			
+								<select ng-options="value for value in foodGenres" required name="genre"
+			
+									ng-model="fooditem.genre" class="form-control" id="genre">
+			
+								</select>
+			
+								<span ng-show="createForm.genre.$touched && createForm.genre.$invalid"
+			
+									class="text-danger">
+			
+									required
+			
+								</span>	
+			
+							</div>
+			
+							<div class="form-group">
+			
+								<label for="price" class="font-weight-bold">Price:</label>
+			
+								<input ng-model="fooditem.price" 
+			
+									type="number" class="form-control" id="price" name="price">					
+			
+							</div>
+							<div class="form-group">
+			
+								<label for="description" class="font-weight-bold">Descriptions:</label>
+			
+								<input ng-model="fooditem.descriptions" 
+			
+									type="text" class="form-control" id="descriptions">					
+			
+							</div>				
+			
+						</form>
+			
+					</div>
+			
+					<div class="card-footer text-center" style="background-color:GoldenRod;">
+			
+						<button type="button" class="btn btn-success"
+			
+							ng-click="createFoodItem()">Create</button>			
+			
+						<button type="button" class="btn btn-info"
+			
+							ng-click="clearFood()">Clear</button>
+			
+					</div>
+			
+					</div>
+			
+				</div>
+				
+			</div>
+		</div>
+		<div class="pt-2" ng-show='showCreateDrinkItem'>
+		<div class="row pt-3">
+			
+				<div class="col-sm-3">			
+			
+				</div>
+			
+				<div class="col-sm-6">
+			
+					<div class="card">
+			
+						<div class="card-header text-center" style="background-color:GoldenRod;">
+			
+							<h3>Create Drink Item</h3>
+			
+							<h5 class="text-success" ng-bind="createStatus"></h5>
+			
+						</div>			
+			
+						<div class="card-body bg-secondary">
+			
+						<form name="createForm">
+			
+							<div class="form-group">
+			
+								<label for="title" class="font-weight-bold">Title:</label>
+			
+								<input ng-model="drinkitem.drinkTitle" required ng-minlength="2" name="title"
+			
+									type="text" class="form-control" id="title">					
+			
+								<span ng-show="createForm.title.$touched && createForm.title.$invalid"
+			
+									class="text-danger">
+			
+									required and must be at least two characters.
+			
+								</span>					
+			
+							</div>
+							
+							<div class="form-group">
+			
+								<label for="genre" class="font-weight-bold">Genre:</label>
+			
+								<select ng-options="value for value in drinkGenres" required name="genre"
+			
+									ng-model="drinkitem.genre" class="form-control" id="genre">
+			
+								</select>
+			
+								<span ng-show="createForm.genre.$touched && createForm.genre.$invalid"
+			
+									class="text-danger">
+			
+									required
+			
+								</span>	
+			
+							</div>
+			
+							<div class="form-group">
+			
+								<label for="price" class="font-weight-bold">Price:</label>
+			
+								<input ng-model="drinkitem.price" 
+			
+									type="number" class="form-control" id="price" name="price">					
+			
+							</div>
+							<div class="form-group">
+			
+								<label for="description" class="font-weight-bold">Descriptions:</label>
+			
+								<input ng-model="drinkitem.descriptions" 
+			
+									type="text" class="form-control" id="descriptions">					
+			
+							</div>
+							<div class="form-group">
+			
+								<label for="abv" class="font-weight-bold">ABV:</label>
+			
+								<input ng-model="drinkitem.abv" 
+			
+									type="number" class="form-control" id="abv" name="abv">					
+			
+							</div>				
+			
+						</form>
+			
+					</div>
+			
+					<div class="card-footer text-center" style="background-color:GoldenRod;">
+			
+						<button type="button" class="btn btn-success"
+			
+							ng-click="createDrinkItem()">Create</button>			
+			
+						<button type="button" class="btn btn-info"
+			
+							ng-click="clearDrink()">Clear</button>
+			
+					</div>
+			
+					</div>
+			
+				</div>
+				
+			</div>
+			
+	</div>
+</div>
